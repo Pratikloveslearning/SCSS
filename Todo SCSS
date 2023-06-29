@@ -1,0 +1,100 @@
+$primary-color: #608FC3;
+$color-white: #fff;
+
+@mixin prt{
+padding: 15px;
+}
+
+@mixin flex{
+    display: flex;
+}
+
+@mixin btn($btn:red){
+    border-width: 1px;
+    border-style: solid;
+    border-color: ($btn);
+    background: $color-white;
+    padding: 10px;
+    color: ($btn);
+}
+
+
+
+body{
+    background: #4C4C4C;
+    @include flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+   
+
+    .todo-list{
+        background: $color-white;
+        width: 800px;
+        max-width: 1000px;
+        
+
+        .todo-header{
+            background-color: $primary-color;
+            color: $color-white;
+            margin-bottom: 10px;
+        
+            h1{
+                margin-top: 0;
+                @include prt;
+                text-align: center;
+            }
+        }
+    }
+    .todo-body{
+        /*@include prt;*/
+        /*margin-bottom: -10px;*/
+        margin-top: -20px;
+        ul{
+            list-style-type: none;
+            padding-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+            li{
+              @include flex;
+              align-items: center;
+              justify-content: space-between;
+
+              border-bottom-color: #4C4C4C;
+              border-bottom-width: 1px;
+              border-bottom-style: solid;
+              @include prt;
+            button{
+                @include btn; 
+            }
+              
+                   
+
+            }
+        }
+
+    }
+.todo-footer{
+    @include prt;
+
+input{
+    width: 633px;
+    max-width: 1000px;
+    height: 30px;
+    padding-left: 20px;
+
+
+}
+button{
+    @include btn($btn: skyblue);
+    margin-left: 18px;
+    padding-left: 17px;
+    padding-right: 15px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+    
+}    
+
+}
